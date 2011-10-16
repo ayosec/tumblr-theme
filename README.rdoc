@@ -1,0 +1,4 @@
+Generate the template with
+
+  ruby make.rb > theme.html
+

@@ -1,0 +1,124 @@
+@import "compass/css3";
+@import "http://fonts.googleapis.com/css?family=Droid+Sans";
+@import "http://fonts.googleapis.com/css?family=Droid+Mono";
+@import "http://fonts.googleapis.com/css?family=Josefin+Slab";
+
+body {
+  font-family: "Droid Sans", sans-serif;
+  font-size: 11pt;
+  color: white;
+  background: #444;
+}
+
+h1, h1 a {
+  font: {
+    family: "Josefin Slab", serif;
+    size: 50pt;
+  }
+
+  color: white;
+
+  text: {
+    decoration: none;
+    align: center;
+    shadow: 2px 2px black;
+  }
+}
+
+.content-block {
+  @include border-radius(1ex);
+  padding: 1em;
+  background: #eee;
+  color: black;
+}
+
+
+@media screen and (min-width: 500px) {
+  .content {
+    @include display-box;
+    max-width: 900px;
+    margin: auto;
+
+    .sidebar {
+      @include box-flex(0);
+      padding: 1ex;
+      width: 200px;
+    }
+
+    .posts {
+      @include box-flex(1);
+    }
+  }
+}
+
+.sidebar {
+  .description {
+    margin-bottom: 1em;
+    @extend .content-block;
+    font-style: italic;
+  }
+  
+  .likes, .footer {
+    @extend .content-block;
+  }
+}
+
+pre, code, tt {
+  font-family: "Droid Mono", monospace;
+}
+
+.posts {
+
+  .date-header {
+    text-shadow: 2px 2px black;
+    font: {
+      size: 15pt;
+      family: "Josefin Slab", serif;
+    }
+  }
+
+  .post {
+    @extend .content-block;
+
+    margin-bottom: 2em;
+    line-height: 140%;
+
+    h2, h2 a {
+      color: #444;
+      text-decoration: none;
+      font: {
+        size: 24pt;
+        family: "Josefin Slab", serif;
+      }
+    }
+
+    .footer {
+      a {
+        color: #004;
+        text-decoration: none;
+        border-bottom: 1px dotted #004;
+
+        &:hover {
+          background: #004;
+          color: white;
+        }
+      }
+
+      margin-top: 1em;
+
+      ul.tags {
+        display: block;
+        padding: 0;
+
+        li {
+          display: inline-block;
+        }
+      }       
+
+      ol.notes {
+        a { border: 0; }
+      }
+    }
+  }
+
+}

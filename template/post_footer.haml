@@ -1,0 +1,13 @@
+.footer
+  - block "NoteCount" do
+    .notes
+      %a{href: "{Permalink}"} {lang:Notes}: {FormattedNoteCount}
+
+  - block "HasTags" do
+    %ul.tags
+      - block "Tags" do
+        %li
+          %a{href: "{TagURL}"} {Tag}
+
+  - block "PostNotes" do
+    {PostNotes}

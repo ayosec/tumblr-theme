@@ -1,0 +1,89 @@
+- block "Posts" do
+  - block "Date" do
+    - block "NewDayDate" do
+      .date-header {Month} {DayOfMonth}, {Year}
+
+  - block "Text" do
+    .post.text
+      - block "Title" do
+        %h2
+          %a{:href => "{Permalink}"} {Title}
+      
+      {Body}
+
+      = import "post_footer"
+  
+  - block "Photo" do
+    .post.photo
+      %img{:alt => "{PhotoAlt}", :src => "{PhotoURL-500}"}/
+      - block "Caption" do
+        .caption {Caption}
+
+      = import "post_footer"
+  
+  - block "Photoset" do
+    .post.photoset
+      {Photoset-500}
+      
+      - block "Caption" do
+        .caption {Caption}
+
+      = import "post_footer"
+  
+  - block "Quote" do
+    .post.quote
+      "{Quote}"
+      
+      - block "Source" do
+        .source {Source}
+
+      = import "post_footer"
+
+  - block "Link" do
+    .post.link
+      = %[<a href="{URL}" class="link" {Target}>{Name}</a>]
+      - block "Description" do
+        .description {Description}
+
+      = import "post_footer"
+  
+  - block "Chat" do
+    .post.chat
+      - block "Title" do
+        %h2
+          %a{:href => "{Permalink}"} {Title}
+      %ul.chat
+        - block "Lines" do
+          %li{:class => "{Alt} user_{UserNumber}"}
+            - block "Label" do
+              %span.label {Label}
+            
+            {Line}
+
+      = import "post_footer"
+  
+  - block "Video" do
+    .post.video
+      {Video-500}
+      
+      - block "Caption" do
+        .caption {Caption}
+
+      = import "post_footer"
+  
+  - block "Audio" do
+    .post.audio
+      {AudioPlayerBlack}
+      
+      - block "Caption" do
+        .caption {Caption}
+
+      = import "post_footer"
+
+  - block "Answer" do
+    .post.answer
+      .asker {Asker}
+      .question {Question}
+      .answer {Answer}
+
+      = import "post_footer"

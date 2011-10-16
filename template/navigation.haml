@@ -1,0 +1,14 @@
+
+- block "Pagination" do
+  - block "PreviousPage" do
+    <a href="{PreviousPage}">Previous</a>
+
+  - block "JumpPagination", length: 5 do
+    - block "CurrentPage" do
+      <span class="current_page">{PageNumber}</span>
+
+    - block "JumpPage" do
+      <a class="jump_page" href="{URL}">{PageNumber}</a>
+
+  - block "NextPage" do
+    <a href="{NextPage}">Next</a>

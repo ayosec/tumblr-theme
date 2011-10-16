@@ -1,0 +1,10 @@
+- block "IndexPage" do
+  - block "Likes" do
+    .likes
+      .head
+        {lang:Liked posts on Tumblr}:
+        %a{href: "http://www.tumblr.com/liked/by/{Name}"} {lang:More liked posts}
+      </div>
+
+      {Likes limit="8" width="150"}
+

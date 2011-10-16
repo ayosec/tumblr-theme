@@ -1,0 +1,27 @@
+%html
+  %head
+    %title {block:PostTitle} {PostTitle} @ {/block:PostTitle}{Title}
+    %link{:href => "{Favicon}", :rel => "shortcut icon"}
+      %link{:href => "{RSS}", :rel => "alternate", :type => "application/rss+xml"}
+        - block "Description" do
+          %meta{:content => "{MetaDescription}", :name => "description"}/
+    %style
+      = style
+      = "{CustomCSS}"
+
+  %body
+    %h1
+      %a{href: "/"} {Title}
+
+    .content
+      .sidebar
+        - block "Description" do
+          .description {Description}
+
+          = import "likes"
+          = import "footer"
+
+      .posts
+        = import "posts"
+
+    = import_custom "footer"
